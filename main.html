@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Merry Christmas</title>
+    <Style>
+
+    </Style>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="circle"></div>
+        <div class="snow-container">
+            <!-- Add multiple snowflakes as needed for density -->
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+<script>
+    // Randomize snowflake properties for a more natural look
+    document.addEventListener('DOMContentLoaded', function () {
+        const flakes = document.querySelectorAll('.snow-container .snowflake');
+        const rootStyle = getComputedStyle(document.documentElement);
+        const minSize = parseFloat(rootStyle.getPropertyValue('--flake-min-size')) || 6;
+        const maxSize = parseFloat(rootStyle.getPropertyValue('--flake-max-size')) || 12;
+        const baseBlur = parseFloat(rootStyle.getPropertyValue('--flake-blur')) || 1;
+        const speed = parseFloat(rootStyle.getPropertyValue('--snow-speed')) || 1;
+
+        flakes.forEach((f, i) => {
+            // size
+            const size = (Math.random() * (maxSize - minSize) + minSize).toFixed(2) + 'px';
+            f.style.width = size;
+            f.style.height = size;
+
+            // choose origin side (some from right, most from left)
+            const fromRight = Math.random() < 0.28; // ~28% from right
+            if (fromRight) {
+                f.style.left = 'auto';
+                f.style.right = (Math.random() * 8 + 2).toFixed(2) + '%';
+                f.style.animationName = 'fall-right';
+            } else {
+                f.style.right = 'auto';
+                f.style.left = (Math.random() * 94).toFixed(2) + '%';
+                f.style.animationName = 'fall';
+            }
+
+            // duration and negative delay so flakes are spread out immediately
+            const duration = (Math.random() * 12 + 8) / speed; // 8s - 20s
+            f.style.animationDuration = duration.toFixed(2) + 's';
+            f.style.animationDelay = (-Math.random() * duration).toFixed(2) + 's';
+
+            // visual variation
+            f.style.opacity = (Math.random() * 0.45 + 0.6).toFixed(2); // 0.6 - 1.05
+            const scale = (Math.random() * 0.9 + 0.5).toFixed(2);
+            f.style.transform = `scale(${scale})`;
+
+            // blur variation
+            const blur = (baseBlur * (Math.random() * 1.8 + 0.6)).toFixed(2) + 'px';
+            f.style.filter = `blur(${blur})`;
+            f.style.webkitFilter = `blur(${blur})`;
+
+            // soft shadow based on blur
+            const blurAmount = Math.max(1, parseFloat(blur));
+            f.style.boxShadow = `0 ${Math.max(1, blurAmount)}px ${Math.max(2, blurAmount * 3)}px rgba(0,0,0,0.12)`;
+        });
+    });
+</script>
+
+</html>
