@@ -12,10 +12,23 @@
     padding: 10px;
     box-sizing: border-box; /* Ensures padding is included in the width */
 }
-pre { /* Or the specific selector for your code block */
+/* Ensure the pre tag handles overflow horizontally for long lines of code */
+pre {
     overflow-x: auto;
-    word-wrap: normal; /* Prevents unwanted wrapping that breaks indentation */
-    white-space: pre;
+    word-wrap: normal; /* Ensures overflow-x works correctly */
+    max-width: 100%; /* Prevents container from stretching past viewport edge */
+    font-size: 14px; /* Optimal reading size for mobile */
+    line-height: 1.4;
+    padding: 1rem; /* Good padding for touch targets */
+    box-sizing: border-box;
+}
+
+/* Adjust font size within media queries for better desktop viewing if needed, 
+   but keep mobile font size consistent */
+@media only screen and (min-width: 768px) {
+    pre {
+        font-size: 16px; 
+    }
 }
 /* Small devices (tablets, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -187,6 +200,7 @@ pre { /* Or the specific selector for your code block */
 
 
 </html>
+
 
 
 
