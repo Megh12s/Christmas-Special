@@ -9,16 +9,28 @@
     <Style>
         body { font-size: 16px; }
 
-/* Styles for screens up to 767px wide (typical mobile) */
-@media only screen and (max-width: 767px) {
-  body {
-    font-size: 14px; /* Smaller font for mobile */
-    padding: 10px;
+/* Small devices (tablets, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .my-element {
+    font-size: 18px;
+    padding: 15px;
   }
-  /* Make elements take full width */
-  .container { width: 100%; }
-  /* Or stack elements vertically */
-  .flex-container { display: flex; flex-direction: column; }
+}
+
+/* Medium devices (laptops/desktops, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .my-element {
+    font-size: 20px;
+    padding: 20px;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .my-element {
+    font-size: 22px;
+    padding: 25px;
+  }
 }
 
     </Style>
@@ -167,3 +179,4 @@
 
 
 </html>
+
