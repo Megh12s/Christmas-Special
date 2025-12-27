@@ -5,23 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="cdnjs.cloudflare.com" rel="stylesheet" />
     <title>Merry Christmas</title>
     <Style>
        .container {
-    width: 100%; /* Fills the available screen width */
-    padding: 10px;
-    box-sizing: border-box; /* Ensures padding is included in the width */
-}
-/* Ensure the pre tag handles overflow horizontally for long lines of code */
-pre {
-    overflow-x: auto;
-    word-wrap: normal; /* Ensures overflow-x works correctly */
-    max-width: 100%; /* Prevents container from stretching past viewport edge */
-    font-size: 14px; /* Optimal reading size for mobile */
-    line-height: 1.4;
-    padding: 1rem; /* Good padding for touch targets */
-    box-sizing: border-box;
-}
+            width: 100%; /* Ensures it fills available width */
+            padding: 10px;
+            box-sizing: border-box; 
+        }
+
+        /* The CSS that ensures mobile display is correct */
+        pre {
+            overflow-x: auto; /* Adds horizontal scrolling if lines are too long */
+            word-wrap: normal; 
+            max-width: 100%; 
+            font-size: 14px; /* Readable font size for mobile */
+            line-height: 1.4;
+            padding: 1rem; 
+            box-sizing: border-box;
+            /* Add some margin to prevent it from touching the screen edges */
+            margin: 10px; 
+        }
+
+        /* Media queries you already had, ensure containers respond */
+        @media only screen and (min-width: 768px) {
+            pre {
+                font-size: 16px; 
+            }
+        }
+        /* ... your other @media queries for .container can go here if needed ... */
 
 /* Adjust font size within media queries for better desktop viewing if needed, 
    but keep mobile font size consistent */
@@ -144,6 +156,20 @@ pre {
 
     </div>
 
+<pre><code class="language-markup">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;My Responsive Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome! This is a very long line of text that forces horizontal scrolling on a mobile phone viewport.&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+        <script src="cdnjs.cloudflare.com"></script>
 
 
 </body>
@@ -200,6 +226,7 @@ pre {
 
 
 </html>
+
 
 
 
