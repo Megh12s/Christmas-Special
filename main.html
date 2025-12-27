@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="style.css">
     <title>Merry Christmas</title>
     <Style>
+        body { font-size: 16px; }
+
+/* Styles for screens up to 767px wide (typical mobile) */
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 14px; /* Smaller font for mobile */
+    padding: 10px;
+  }
+  /* Make elements take full width */
+  .container { width: 100%; }
+  /* Or stack elements vertically */
+  .flex-container { display: flex; flex-direction: column; }
+}
 
     </Style>
 </head>
@@ -151,5 +164,6 @@
         });
     });
 </script>
+
 
 </html>
